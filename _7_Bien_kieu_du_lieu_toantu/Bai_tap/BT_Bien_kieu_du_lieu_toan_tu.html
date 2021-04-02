@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <h2>Bảng tính điểm tổng và điểm trung bình của 3 môn </h2>
+        <input type="number" id="diemtoan" placeholder="Nhập điểm toán">
+        <input type="number" id="diemly" placeholder="Nhập điểm ">
+        <input type="number" id="diemhoa">
+        <input type="button" value="Tinh" onclick="tinh()">
+    </div>
+    <div>
+        <h2>Bảng đổi nhiệt độ từ C sang F</h2>
+        <input type="number" id="c" placeholder="nhập số độ">
+        <input type="button" value="Đổi sang độ F" onclick="tinh2()">
+    </div>
+    <div>
+        <h2>Bảng tính diện tích hình tròn</h2>
+        <input type="number" id="bankinh" placeholder="Nhập bán kính">
+        <input type="button" value="Tính" onclick="tinh3()">
+        <p>Diện tính hình tròn là : <span id="dientich"></span></p>
+    </div>
+    <div>
+        <h2>Bảng tính chu vi hình tròn</h2>
+        <input type="number" id="bankinh2" placeholder="Nhập bán kính">
+        <input type="button" value="Tính" onclick="tinh4()">
+        <p>chu vi hình tròn là : <span id="chuvi"></span></p>
+    </div>
+<script>
+    function tinh() {
+        let a= parseInt(document.getElementById("diemtoan").value);
+        let b= parseInt(document.getElementById("diemly").value);
+        let c= parseInt(document.getElementById("diemhoa").value);
+        tong= a+b+c ;
+        trungbinh = tong / 3
+        alert ("Tổng điểm là :"+tong+ "\nđiểm trung bình là:" +trungbinh);
+    }
+    function tinh2() {
+        let d= parseInt(document.getElementById("c").value);
+        let  fahrenheit= (9*d)/5+32;
+        alert ("Độ F là : " +fahrenheit);
+    }
+    function tinh3() {
+        let r= parseInt(document.getElementById("bankinh").value);
+        let S= r*r*3.14;
+        // alert ("Diện tích hình tròn là:" +S)
+        document.getElementById("dientich").innerHTML= S;
+    }
+    function tinh4() {
+        let R= parseInt(document.getElementById("bankinh2").value)
+        let C= 2*R*3.14
+        document.getElementById("chuvi").innerHTML= C;
+    }
+</script>
+</body>
+</html>
