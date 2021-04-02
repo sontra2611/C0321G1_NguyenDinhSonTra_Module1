@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form khai báo thông tin và sở thích</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .login-form{
+            background-color: aquamarine;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 2px solid;
+            border-radius: 10px;
+        }
+        h1{
+            background-color: orangered;
+            text-align: center;
+        }
+        input {
+            margin-top: 10px;
+        }
+        .input2 {
+            margin-left: 68px;
+        }
+        span {
+            color: red;
+            padding-left: 5px;
+        }
+        .button1 {
+            margin-left: 55px;
+            width: 100px;
+            height: 25px;
+        }
+        .button2 {
+            width: 90px;
+            height: 25px;
+        }
+        label {
+            font-weight: bold;
+        }
+        .login-form2 {
+            background-color: #fffda9;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 2px solid;
+            border-radius: 10px;
+        }
+        .header2 {
+            text-align: left;
+            background-color: aqua;
+        }
+        .label2 {
+            text-align: left;
+        }
+        .input3 {
+            margin-left: 25px;
+            width: 200px;
+        }
+        .input4 {
+            margin-left: 22px;
+        }
+        .input5 {
+            margin-left: 30px;
+        }
+        .input6 {
+            margin-left: 48px;
+        }
+        .input7 {
+            margin-left: 17px;
+        }
+        .input3, .input4, .input6, .input7 {
+            height: 30px;
+        }
+        textarea {
+            margin-left: 40px;
+            width: 200px;
+            height: 50px;
+        }
+        select {
+            margin-left: 60px;
+            width: 100px;
+            height: 25px;
+        }
+        .button3 {
+            margin-left: 90px;
+            width: 85px;
+            height: 30px;
+        }
+        .button4 {
+            width: 85px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="login-form">
+           <form method="get">
+               <h1>Sở thích của bạn</h1>
+               <label>Họ và tên</label>
+               <input style="width: 300px; height: 25px" type="text" name="name"><br><br>
+               <label style="margin-left: 14px">Email</label>
+               <input style="width: 300px; height: 25px; margin-left: 10px" type="text" name="email"><br><br>
+               <label style="margin-left: 8px">Sở thích</label>
+               <input type="checkbox" value="sport" name="hobby"><span>Thể Thao</span>
+               <input type="checkbox" value="music" name="hobby"><span>Âm nhạc</span>
+               <input type="checkbox" value="book" name="hobby"><span>Đọc sách</span> <br>
+               <input class="input2" type="checkbox" value="web" name="hobby"><span>Lướt web</span>
+               <input type="checkbox" value="game" name="hobby"><span>chơi game</span>
+               <input type="checkbox" value="film" name="hobby"><span>Điện ảnh</span> <br>
+               <input class="input2" type="checkbox" value="travel" name="hobby"><span>Du lịch</span><br><br>
+               <button class="button1" type="submit">Gửi thông tin </button>
+               <button class="button2" type="reset">Nhập lại</button>
+           </form>
+       </div>
+    </div>
+    <div class="container">
+        <div class="login-form2">
+            <form method="get">
+                <h1 class="header2">Đăng kí học viên</h1>
+                <label class="label2">Họ và tên</label>
+                <input class="input3" type="text" name="name"><br><br>
+                <label class="label2" >Ngày sinh</label>
+                <input class="input4" type="text" name="birthday"><br><br>
+                <label class="label2">Giới tính</label>
+                <input class="input5" type="radio" name="gender" value="Nam"><span>Nam</span>
+                <input type="radio" name="gender" value="Nu"><span>Nữ</span>
+                <br><br>
+                <label class="label2">Địa chỉ</label>
+                <textarea></textarea><br><br>
+                <label class="label2">Lớp</label>
+                <select>
+                    <option>-Chọn lớp-</option>
+                </select><br><br>
+                <label class="label2">Email</label>
+                <input class="input6" type="text" name="email"><br><br>
+                <label class="label2">Điện thoại</label>
+                <input class="input7" type="number" name="phonenumber"><br><br>
+                <button class="button3" type="submit">Đăng Ký</button>
+                <button class="button4" type="reset">Nhập lại</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
