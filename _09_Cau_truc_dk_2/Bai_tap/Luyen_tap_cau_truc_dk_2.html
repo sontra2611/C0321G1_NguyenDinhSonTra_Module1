@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 2</title>
+</head>
+<body>
+    <script>
+        //Bài 1: Chuyển từ độ C sang độ F.
+        let C = parseInt(prompt("Nhập độ C"));
+        let F = C*9/5+32 ;
+        alert('Độ F là : '+F);
+
+        //Bài 2: Chuyển từ mét sang feet:
+        let m = parseInt(prompt("nhập số mét"));
+        let ft = m*3.2808;
+        alert(ft+ " feet");
+
+        //Bài 3: Tính diện tích hình vuông khi biết cạnh a.
+        let canh = parseInt(prompt("nhập độ dài cạnh "));
+        if (canh>0){
+            S = canh*2;
+            alert('Diện tích hình vuông là : '+S);
+        }else {
+            alert("vui lòng nhập độ dài cạnh > 0");
+        }
+
+        //Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.
+        let width = parseInt(prompt('nhập chiều dài : '));
+        let length = parseInt(prompt('nhập chiều rộng : '));
+        if (width >0 && length >0) {
+            S1 = width*length;
+        }else {
+            alert('vui lòng nhập các cạnh của HCN > 0');
+        }
+
+        //Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
+        let a1= parseInt(prompt('nhập cạnh a'));
+        let a2= parseInt(prompt('nhạp cạnh b'));
+        if (a1>0 && a2>0){
+            S3 = a1*a2/2;
+            alert("diện tích hình vuông là : " +S3);
+        }else {
+            alert("vui lòng nhập các cạnh tam giác > 0")
+        }
+
+        //Bài 6: Giải phương trình bậc 1.
+        let num1 = parseFloat(prompt("nhập tham số thứ nhất của pt: ax + b = 0"));
+        let num2 = parseFloat(prompt("nhập tham số thứ hai của pt: ax + b = 0"));
+        if(num1==0){
+            if(num2 == 0){
+                alert("phương trình có vô số nghiệm");
+            }else {
+                alert("phương trình vô nghiệm");
+            }
+        }else {
+           alert("phương trình có nghiệm là : " + (-num2)/num1);
+        }
+
+       // Bài 7: Giải phương trình bậc 2.
+        let a = parseFloat(prompt("nhập a"));
+        let b = parseFloat(prompt("nhập b"));
+        let c = parseFloat(prompt("nhập c"));
+        let delta = b*b - 4*a*c;
+        if (a !=0){
+            if (delta<0) {
+                alert("phương trình vô nghiệm");
+            }else if (delta==0) {
+                alert("phương trình có nghiệm kép x1=x2 là : " + (-b)/2*a);
+            }else {
+                x1 = (-b + Math.sqrt(delta))/2*a;
+                x2 = (-b - Math.sqrt(delta))/2*a;
+                alert("phương trình có nghiệm x1= " + x1 + "\n phương trình có nghiệm x2= "+ x2);
+            }
+        }else {
+            alert("Vui lòng nhập a khác 0");
+        }
+
+        //Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+        let tuoi = parseInt(prompt('nhập tuổi'));
+        if (tuoi > 0 && tuoi<120){
+            alert(tuoi + " là tuổi người");
+        }else {
+            alert(tuoi + " không phải là tuổi người");
+        }
+
+        //Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.
+        let x = parseInt(prompt('nhập cạnh thứ nhất'));
+        let y = parseInt(prompt('nhập cạnh thứ hai'));
+        let z = parseInt(prompt('nhập cạnh thứ ba'));
+        if (x>0 && y>0 && z>0){
+            if(z<x+y && x<y+z && y<x+z){
+                alert("đây là 3 cạnh của tam giác");
+            }else {
+                alert("đây không phải là 3 cạnh của tam giác");
+            }
+        }else {
+            alert("vui lòng nhập giá trị các cạnh > 0");
+        }
+
+        //Bài 10: Viết chương trình tính giá điện.
+        let elec = prompt('nhập số lượng điện năng tiêu thụ');
+            if(elec >= 200){
+               tiendien = elec*2000;
+               alert("Tiền điện tháng này là : " +tiendien);
+            }else if (elec >= 100){
+                tiendien = elec*1500;
+                alert("Tiền điện tháng này là : " +tiendien);
+            }else {
+                tiendien = elec*1000;
+                alert("Tiền điện tháng này là : " +tiendien);
+            }
+
+        //Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+        let income = prompt("nhập số tiền thu nhập cá nhân");
+        if (income>1000000000){
+            thue = income*3/100;
+            alert("Thuế thu thập cá nhân của bạn là : "+thue);
+        }else {
+            thue = income*2/100;
+            alert("Thuế thu nhập cá nhân của bạn là : "+thue);
+        }
+
+        // Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+        let vay = parseInt(prompt("nhập số tiền muốn vay"));
+        let Month = parseInt(prompt("nhập số tháng muốn vay"));
+       let lai = 0;
+        for (let i = 1; i <= Month ; i++){
+            lai = (vay + lai)* 0.69/100;
+            console.log("tháng " + Month + "\n Lãi: " + lai)
+            i++;
+        }
+       switch (Month) {
+           case (1):
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (2):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (3):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (4):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (5):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (6):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (7):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (8):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (9):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (10):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (11):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+           case (12):
+               lai = (vay+lai)*0.69/100;
+               alert("số tiền lãi là : " +lai);
+               break;
+       }
+    </script>
+</body>
+</html>

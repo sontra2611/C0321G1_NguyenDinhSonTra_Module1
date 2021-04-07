@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện</title>
+</head>
+<body>
+    <script>
+        // Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không :
+        let a = prompt("nhập a");
+        let b = prompt("nhập b");
+        let c = a % b ;
+        if (b != 0){
+            if (c == 0) {
+                alert("a chia hết cho b");
+            }else {
+                alert("a không chi hết cho b");
+            }
+        }else {
+            alert("vô nghiệm");
+        }
+        // Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10:
+        let tuoi = prompt("nhập số tuổi");
+        if (tuoi >= 15) {
+            alert("Bạn đủ điều kiện vào lớp 10");
+        }else {
+            alert("Bạn không đủ điều kiện vào lớp 10");
+        }
+        // Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0
+        let number = parseInt(prompt("nhập số"));
+        if (number > 0){
+            alert("số "+ number +" lớn hơn 0");
+        }
+        else if(number < 0){
+            alert("số "+ number +" nhỏ hơn 0");
+        }else {
+            alert("số "+ number +" bằng 0");
+        }
+        //Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+        let num1 = prompt('nhập số thứ nhất');
+        let num2 = prompt('nhập số thứ hai');
+        let num3 = prompt('nhập số thứ ba');
+        if (num1 > num2 && num1 > num3) {
+            alert('số lớn nhất là : '+ num1);
+        }else {
+            if (num2 > num3) {
+                alert('số lớn nhất là : ' + num2);
+            }else {
+                alert('số lớn nhất là : ' + num3);
+            }
+        }
+        //Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+        let test15m = parseInt(prompt('Nhập điểm kiểm tra 15p'));
+        let test45m = parseInt(prompt('Nhập điểm kiểm tra giữa kì'));
+        let lasttest = parseInt(prompt('Nhập điểm kiểm tra cuối kì'));
+        let avg = (test15m + test45m*2 + lasttest*3)/6 ;
+        if (avg >= 80) {
+            alert('Học lực giỏi');
+        }else if (avg >= 60){
+            alert('Học lực khá');
+        }else  if (avg >= 50){
+            alert('Học lực trung bình');
+        }else {
+            alert('Học lực yếu');
+        }
+        // Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+        let doanhso = prompt('Nhập doanh số tháng này của bạn')
+        if (doanhso >= 500000){
+            hoahong = doanhso*5/100;
+            alert('Hoa hồng của bạn là : ' +hoahong)
+        }else if (doanhso >= 200000){
+            hoahong = doanhso*2/100;
+            alert('Hoa hồng của bạn là: '+ hoahong);
+        } else if (doanhso >= 100000){
+            hoahong = doanhso/100;
+            alert('Hoa hồng của bạn là: '+ hoahong);
+        }else {
+            alert('Bạn không có hoa hồng')
+        }
+        // Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+        let time = parseInt(prompt('Nhập số phút đã gọi'));
+        let cuoctb= 20000;
+        if(time >= 200){
+            phi = cuoctb + time*200;
+            alert("Cước điện thoại tháng này của bạn là : "+phi);
+        }else if(time >= 100){
+            phi = cuoctb + time*400;
+            alert("Cước điện thoại tháng này của bạn là : "+phi);
+        }else {
+            phi = cuoctb + time*600;
+            alert("Cước điện thoại tháng này của bạn là : "+phi);
+        }
+    </script>
+</body>
+</html>

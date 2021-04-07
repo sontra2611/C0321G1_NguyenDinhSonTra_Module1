@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng tính số ngày</title>
+</head>
+<body>
+    <input type="text" id="month">
+    <button onclick="tinh('month', 'ketqua')">Tính số ngày</button><br><br>
+    <p id="ketqua"></p>
+    <p>và</p>
+    <input type="text" id="month2">
+    <button onclick="tinh('month2', 'ketqua2')">Tính số ngày</button><br><br>
+    <p id="ketqua2"></p>
+    <script>
+        function tinh(idThang, idKetqua) {
+            let Month = parseInt(document.getElementById(idThang).value);
+
+            switch (Month) {
+                case 1 :
+                case 3 :
+                case 5 :
+                case 7 :
+                case 8 :
+                case 10 :
+                case 12 :
+                    document.getElementById(idKetqua).innerHTML = 'Tháng ' + Month + ' có 31 ngày';
+                    break;
+                case 2 :
+                    document.getElementById(idKetqua).innerHTML = 'Tháng 2 có 28 hoặc 29 ngày';
+                    break;
+                case 4 :
+                case 6 :
+                case 9 :
+                case 11 :
+                    document.getElementById(idKetqua).innerHTML = 'Tháng ' + Month + ' có 30 ngày';
+                    break;
+                default :
+                    alert("Không phải tháng trong năm");
+            }
+        }
+    </script>
+</body>
+</html>
