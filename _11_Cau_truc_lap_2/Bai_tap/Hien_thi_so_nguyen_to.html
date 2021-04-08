@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị số nguyên tố</title>
+</head>
+<body>
+<p id="result"></p>
+</body>
+<script>
+    let result = "Các số nguyên tố: ";
+    let numbers;
+    do {
+        numbers = parseInt(prompt("Số lượng số nguyên tố cần in ra: "));
+    }while (numbers <= 0);
+    let count = 0, n = 2;
+    while (count < numbers){
+        let boolean = true;
+        for (let i = 2; i<= Math.sqrt(n); i++){
+            if (n % i == 0) boolean = false; //không phải snt
+        }
+
+        if (boolean){
+            result += n + " ";
+            count++;
+        }
+        n++;
+    }
+    document.write(result);
+
+</script>
+</html>

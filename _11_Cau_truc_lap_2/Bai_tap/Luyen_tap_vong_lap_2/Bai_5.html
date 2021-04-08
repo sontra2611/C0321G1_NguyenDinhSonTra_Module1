@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+    <script>
+        //Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+        let vay = parseInt(prompt("nhập số tiền muốn vay"));
+        let Month = parseInt(prompt("nhập số tháng muốn vay"));
+        let lai = 0;
+        for (let i = 1; i <= Month ; i++){
+            lai = (vay + lai)* 8/100;
+            vay += lai;
+        }
+        alert(lai);
+    </script>
+</body>
+</html>
