@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 7</title>
+</head>
+<body>
+    <script>
+        //Bài 7 :Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng
+        let arr= new Array(10);
+        for (let i=0;i<10;i++){
+            arr[i]= parseInt(prompt('nhập phần tử thứ : '+i));
+        }
+        let v= prompt('nhập phần tử số nguyên v');
+        let flag= false;
+        for (let i=0;i<arr.length;i++){
+            if (v==arr[i]){
+                flag = true;
+                for (let j=i;j<arr.length;j++){
+                    arr[j]=arr[j+1];
+                }
+                arr[arr.length-1]=0;
+            }
+        }
+        if (flag) {
+            alert(arr);
+        } else {
+            alert("V is not in the array");
+        }
+    </script>
+</body>
+</html>
