@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+    <label for="input">Từ điển Anh-Việt</label>
+    <br>
+    <input id="input" type="text" placeholder="nhập từ bạn muốn dịch">
+    <button onclick="trans()">Dịch</button>
+    <p id="result">Result : </p>
+    <script>
+        function trans() {
+            let eng= ["book","pen","pencil"];
+            let vie= ["sách","bút","bút chì"];
+
+            let str = document.getElementById("input").value;
+            console.log(str);
+            let flag = false;
+
+            for (let i = 0; i < eng.length; i++) {
+                if (eng[i]== str){
+                    flag = true;
+                    document.getElementById("result").innerText = vie[i];
+                }
+            }
+            if(flag){
+                document.getElementById("result").innerText = vie[i];
+            }else {
+                alert("không tìm thấy");
+            }
+        }
+    </script>
+</body>
+</html>
