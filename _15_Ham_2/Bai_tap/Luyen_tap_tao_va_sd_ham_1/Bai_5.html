@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+    <script>
+        //Bài 5: Tìm tên ngôi sao và trả về lại chòm sao tương ứng.
+
+        let star= ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+        let constellation= ["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+        console.log(star);
+        console.log(constellation);
+        let inputNameStar= prompt("Nhập vào tên ngôi sao");
+        let flag = false;
+
+
+        function checkStar(nameStar) {
+            for (let i = 0; i < star.length;i++) {
+                if (nameStar == star[i]) {
+                    flag = true;
+                    alert("Tên chòm sao tương ứng là : " + constellation[i]);
+                    break;
+                }else {
+                    flag = false;
+                }
+            }
+            if (!flag){
+                alert("không tìm thấy");
+            }
+        }
+        checkStar(inputNameStar);
+    </script>
+</body>
+</html>

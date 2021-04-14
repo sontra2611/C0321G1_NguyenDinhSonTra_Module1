@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+    <script>
+        //Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+        let count = 0;
+
+        function checkChar(arr, char) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == char) {
+                    count++;
+                }
+            }
+            if (count != 0) {
+                alert("Số lần xuất hiện của ký tự " + b + " là : " + count);
+            } else {
+                alert("-1");
+            }
+        }
+
+        let n;
+        do {
+            n = prompt("nhập vào số lượng phần tử");
+        } while (!(n > 0 && n < 20));
+        let inputArr = new Array(n);
+        for (let i = 0; i <= n; i++) {
+            inputArr[i] = prompt('nhập ký tự thứ : ' + i);
+        }
+        let b = prompt("nhập vào 1 ký tự");
+        checkChar(inputArr, b);
+    </script>
+</body>
+</html>

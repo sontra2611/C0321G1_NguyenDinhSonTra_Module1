@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+    <script>
+        //Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+
+        function reverseArr(arr) {
+            arr.reverse();
+            alert("Mảng sau khi bị đảo: "+arr);
+        }
+
+        let n;
+        do {
+            n = prompt("nhập vào số lượng phần tử");
+        } while (!(n > 0 && n < 20));
+        let inputArr = new Array(n);
+        for (let i = 0; i <= n; i++){
+            inputArr[i]= prompt('nhập phần tử thứ : '+i);
+        }
+        alert("mảng trước khi bị đảo" +inputArr);
+        reverseArr(inputArr);
+    </script>
+</body>
+</html>
