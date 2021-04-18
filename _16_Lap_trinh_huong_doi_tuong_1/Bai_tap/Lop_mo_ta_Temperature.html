@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp Teamperature</title>
+</head>
+<body>
+    <script>
+        class Temperature {
+            constructor(cel) {
+                this.cel = cel;
+            }
+            getTinhDoF(){
+                return this.cel * 9/5+32;
+            }
+            getTinhDoK(){
+                return this.cel + 273.15;
+            }
+        }
+        let nhietdo;
+        do {
+            nhietdo = new Temperature(parseInt(prompt("Nhập vào giá trị của độ C")));
+            if (nhietdo.cel< -273){
+                alert("Nhập lại giá trị > -273")
+            }else {
+                break;
+            }
+        }while (true)
+
+        let doF = nhietdo.getTinhDoF();
+        let doK = nhietdo.getTinhDoK();
+        alert("Độ F : "+doF+"\nĐộ C : "+doK)
+
+    </script>
+</body>
+</html>

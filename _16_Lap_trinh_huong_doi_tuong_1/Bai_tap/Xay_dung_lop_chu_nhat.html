@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="300"></canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor(dai, rong) {
+            this.dai = dai;
+            this.rong = rong;
+        }
+        getDienTich() {
+            document.write("<br>"+"Diện tích hình chữ nhật là : "+this.dai*this.rong+"<br>");
+        }
+        getchuVi() {
+            document.write("<br>"+"Chu vi hinh chữ nhật là : "+(this.dai+this.rong)*2+"<br>");
+        }
+        gethienThi(){
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.fillStyle = "red";
+            ctx.fillRect(20,20,this.dai,this.rong);
+            return this.gethienThi();
+        }
+    }
+    let a = parseInt(prompt("Nhập chiều dài"));
+    let b = parseInt(prompt("Nhập chiều rộng"))
+    let hinhChuNhat= new Rectangle(a,b);
+        hinhChuNhat.getchuVi();
+        hinhChuNhat.getDienTich();
+        hinhChuNhat.gethienThi();
+</script>
+</html>
