@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng và loop</title>
+</head>
+<body>
+    <p id="result"></p>
+    <button onclick="order()">order</button>
+    <p id="result2"></p>
+    <script>
+        // //Bài 1: Cho mảng a chỉ chứa các số nguyên.Xây dựng mảng b là prefix sums của mảng a cụ thể theo công thức:
+        //     let arr = [2,5,8];
+        // let arrNew = [];
+        // let sum = 0;
+        // for (let i=0;i<arr.length;i++){
+        //     sum+=arr[i];
+        //     arrNew.push(sum);
+        // }
+        // console.log(arrNew);
+        //
+        // //Bài 2: Cho 2 mảng A và B chứa số nguyên. Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A
+        // let a = [7,2,5,3,5,3];
+        // let b = [7,2,5,4,6,3,5,3];
+        // let c = []
+        // for (let i=0 ; i<b.length; i++){
+        //     if (a.indexOf(b[i]) == -1 && c.indexOf(b[i])== -1){
+        //         c.push(b[i]);
+        //     }
+        // }
+        // console.log(c);
+        //
+        // //Bài 3: Cho một danh sách các phân số, hãy tìm chỉ số của phân số lớn nhất (đếm từ 0)
+        // let numerators = [5, 2, 5];
+        // let denominators = [4, 3, 6];
+        // let max = numerators[0]/denominators[0];
+        // let newarr= [];
+        // for (let i = 0 ; i < numerators.length;i++){
+        //     if (numerators[i]/denominators[i] > max){
+        //         max = numerators[i]/denominators[i];
+        //     }
+        //     newarr.push(numerators[i]/denominators[i]);
+        // }
+        // console.log(newarr.indexOf(max));
+        //
+        // //Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ. Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.
+        // let num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // let str = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười"];
+        // let a = prompt("Nhập số");
+        // let result = "";
+        // for (let i = 0; i < a.length; i++) {
+        //     if (num.indexOf(parseInt(a[i])) !== -1) {
+        //         let index =num.indexOf(parseInt(a[i]));
+        //         result += ( str[index] +" ");
+        //     }
+        // }
+        // alert(result);
+
+        //bài 5 : in ra màn hinh danh sách các loại thức uống cho người dùng chọn lựa,Khi người dùng lựa chọn 1 trong số các thức uống, chương trình sẽ hiện đơn giá của thức uống đó và cho phép người dùng nhập số lượng. Cuối cùng hiển thị tổng số tiền người dùng cần phải trả.
+        let nameProduct = ["cafe", "cam vắt", "nước ép cà rốt", "nước ép cà chua","nước lọc","nước dừa","thoát chọn món"];
+        let price = [15,20,25,25,10,30];
+        function display() {
+            let tableString = '<table>';
+            for (let i = 0; i < nameProduct.length; i++) {
+                tableString += '<tr>';
+                tableString += '<td width="30px" height="50px">' + (i + 1) + '.' + '</td>'
+                tableString += '<td width="200px" height="50px">' + nameProduct[i] + '</td>'
+                tableString += '</tr>';
+            }
+            tableString += '</table>';
+            document.getElementById("result").innerHTML = tableString;
+        }
+        display()
+
+        function order() {
+            let flag =true;
+            let totalPrice =0;
+            do {
+                let numorder = prompt("nhập số thứ tự thức uống bạn muốn order : " + "\n nhập 7 để kết thúc order");
+                if (numorder < 7){
+                    let amount =prompt("Giá thức uống là : " + price[numorder-1] + "k" + "\n Vui lòng nhập số lượng : ")
+                    totalPrice += amount * price[numorder-1];
+                    document.getElementById("result2").innerHTML = "tổng tiền của bạn là : " + totalPrice + "k";
+                }else {
+                    flag = false;
+                }
+            }while (flag)
+        }
+    </script>
+</body>
+</html>

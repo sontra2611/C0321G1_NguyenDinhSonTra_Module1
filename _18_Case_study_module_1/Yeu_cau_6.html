@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP</title>
+    <style>
+        input {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+<h2>Xổ số CodeGym</h2>
+<p id="display"></p>
+<button onclick="buyTicket()">Mua vé</button>
+<button onclick="seeResult()">Xem kết quả</button>
+<script>
+    class LotteCodeGym {
+        constructor(num1, num2, num3, num4, num5, num6) {
+            this.num1 = num1;
+            this.num2 = num2;
+            this.num3 = num3;
+            this.num4 = num4;
+            this.num5 = num5;
+            this.num6 = num6;
+        }
+
+        getNum1() {
+            return this.num1;
+        }
+
+        getNum2() {
+            return this.num2;
+        }
+
+        getNum3() {
+            return this.num3;
+        }
+
+        getNum4() {
+            return this.num4;
+        }
+
+        getNum5() {
+            return this.num5;
+        }
+
+        getNum6() {
+            return this.num6;
+        }
+
+        setNum1(num1) {
+            this.num1 = num1;
+        }
+
+        setNum2(num2) {
+            this.num2 = num2;
+        }
+
+        setNum3(num3) {
+            this.num3 = num3;
+        }
+
+        setNum4(num4) {
+            this.num4 = num4;
+        }
+
+        setNum5(num5) {
+            this.num5 = num5;
+        }
+
+        setNum6(num6) {
+            this.num6 = num6;
+        }
+
+    }
+
+    let num = new LotteCodeGym();
+    let check = true;
+    let array = [];
+    let max = 0;
+    function display() {
+        let tableString = '<table>';
+
+        for (let i = 0; i < 2; i++) {
+            tableString += '<tr>';
+            for (let j = 0; j < 6; j++) {
+                tableString += '<td>' + '<input id="input' + i + '' + j + '" type="number" min="0" max="99"  disabled>' + '</td>'
+            }
+            tableString += '</tr>';
+        }
+        tableString += '</table>';
+        document.getElementById("display").innerHTML = tableString;
+    }
+
+    display();
+
+    function buyTicket() {
+
+        let option = parseInt(prompt("Nhập 1 nếu bạn muốn tự chọn số " + "\nNhập 2 nếu bạn muốn hệ thống tự random"));
+        if (option == 1 && max <4) {
+            check = true;
+            for (let i = 0; i<6;i++){
+                document.getElementById("input0"+i).disabled = false;
+            }
+            max++ ;
+        }
+
+        else if (option == 2 && max < 4) {
+            check = false;
+
+            for (let i = 0; i<6;i++){
+                document.getElementById("input0"+i).disabled = true;
+            }
+
+            num.setNum1(Math.floor(Math.random() * 100));
+            num.setNum2(Math.floor(Math.random() * 100));
+            num.setNum3(Math.floor(Math.random() * 100));
+            num.setNum4(Math.floor(Math.random() * 100));
+            num.setNum5(Math.floor(Math.random() * 100));
+            num.setNum6(Math.floor(Math.random() * 100));
+            let a = document.getElementById("input00").value = num.getNum1();
+            let b = document.getElementById("input01").value = num.getNum2();
+            let c = document.getElementById("input02").value = num.getNum3();
+            let d = document.getElementById("input03").value = num.getNum4();
+            let e = document.getElementById("input04").value = num.getNum5();
+            let f = document.getElementById("input05").value = num.getNum6();
+            array.push(a, b, c, d, e, f)
+            console.log(array);
+            max++;
+        }
+        else {
+            alert("Bạn chỉ được mua tối đa 4 vé");
+        }
+    }
+
+    function seeResult() {
+        let number1 = Math.floor(Math.random() * 100);
+        let number2 = Math.floor(Math.random() * 100);
+        let number3 = Math.floor(Math.random() * 100);
+        let number4 = Math.floor(Math.random() * 100);
+        let number5 = Math.floor(Math.random() * 100);
+        let number6 = Math.floor(Math.random() * 100);
+        let luckyNumber = [];
+        luckyNumber.push(number1, number2, number3, number4, number5, number6);
+        for (let i = 0; i < luckyNumber.length; i++) {
+            document.getElementById("input1" + i).value = luckyNumber[i];
+        }
+
+        if (check) {
+            let a = document.getElementById("input00").value;
+            let b = document.getElementById("input01").value;
+            let c = document.getElementById("input02").value;
+            let d = document.getElementById("input03").value;
+            let e = document.getElementById("input04").value;
+            let f = document.getElementById("input05").value;
+
+            let arr = [];
+            arr.push(a, b, c, d, e, f);
+
+            let count = 0;
+            for (let i = 5; i >= 0; i--) {
+                if (arr[i] == luckyNumber[i]) {
+                    count++;
+                } else {
+                    break;
+                }
+            }
+
+            switch (count) {
+                case 3 :
+                    alert("Bạn đã trúng giải khuyến khích");
+                    break;
+                case 4 :
+                    alert("Bạn đã trúng giải ba");
+                    break;
+                case 5 :
+                    alert("Bạn đã trúng giải nhì");
+                    break;
+                case 6 :
+                    alert("Bạn đã trúng giải nhất");
+                    break;
+                default :
+                    alert("chúc bạn may mắn lần sau");
+            }
+        }
+
+        if (!check) {
+            let count = 0;
+            for (let i = 5; i >= 0; i--) {
+                if (array[i] == luckyNumber[i]) {
+                    count++;
+                } else {
+                    break;
+                }
+            }
+            switch (count) {
+                case 3 :
+                    alert("Bạn đã trúng giải khuyến khích");
+                    break;
+                case 4 :
+                    alert("Bạn đã trúng giải ba");
+                    break;
+                case 5 :
+                    alert("Bạn đã trúng giải nhì");
+                    break;
+                case 6 :
+                    alert("Bạn đã trúng giải nhất");
+                    break;
+                default :
+                    alert("chúc bạn may mắn lần sau");
+            }
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>case study</title>
+</head>
+<body>
+    <script>
+        // //Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa.
+        //
+        // let str = prompt("Nhập vào xâu kí tự").toLowerCase().split(' ');
+        // let arr = [];
+        //
+        // function xuLiChuoi(n) {
+        //     for (let i = 0; i < n.length; i++) {
+        //         if (n[i].length > 0) {
+        //             arr.push(n[i]);
+        //         }
+        //     }
+        //     for (let i = 0; i < arr.length; i++) {
+        //         arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+        //     }
+        //     arr = arr.join(" ");
+        //     alert(arr);
+        // }
+        // xuLiChuoi(str)
+        // console.log(arr)
+        // let newArr = arr.split(" ");
+        // console.log(newArr);
+        // function tinhDoDai(a){
+        //     let max = a[0];
+        //     for (let i=0;i< a.length;i++){
+        //         if (a[i].length > a[0].length){
+        //             max = a[i];
+        //         }
+        //     }
+        //     console.log(max);
+        // }
+        // tinhDoDai(newArr);
+        //
+        // // //Bài 2: Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+        // let s = "cabca"
+        // let arr=[];
+        // function differentSymbolsNaive(str) {
+        //     for (let i=0; i<str.length; i++){
+        //         if (arr.indexOf(s[i])== -1){
+        //             arr.push(s[i]);
+        //         }
+        //     }
+        //     console.log(arr.length);
+        // }
+        // differentSymbolsNaive(s)
+
+        //Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
+
+        let s1 = prompt("nhập vào xâu 1 :")
+        let s2 = prompt("nhập vào xâu 2 :")
+        function commonCharacterCount(s1,s2) {
+            let arr1 = s1.split("");
+            let arr2 = s2.split("");
+            let count = 0;
+            for (let i = 0; i<arr1.length; i++){
+                for (let j = 0 ; j<arr2.length; j++){
+                    if (arr1[i] == arr2[j]){
+                        count++;
+                        arr1.splice(i,1);
+                        arr2.splice(j,1);
+                        i--;
+                        break;
+                    }
+                }
+            }
+            return count;
+        }
+        alert("số lượng ký tự giống nhau của 2 xâu là : "+commonCharacterCount(s1,s2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Casetudy2</title>
+</head>
+<body>
+    <script>
+        //Bài 1: Viết một chương trình để nhập lương nhân viên, tính thuế thu nhập và lương ròng
+        let luong= parseFloat(prompt("nhập số lương \n Đơn vị : triệu đồng"));
+        let thue;
+        if (luong>=15){
+            thue = luong*20/100;
+        }else if (luong >= 7){
+            thue = luong*10/100;
+        }else {
+            thue =luong*5/100;
+        }
+        luongRong = luong - thue;
+        console.log("Thuế của bạn là : " + thue + " triệu đồng");
+        console.log("Số tiền lương bạn nhạn được sau khi trừ thuế là : " + luongRong + " triệu đồng");
+
+        //Bài 2: Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm. Ký tự là bất kỳ được nhập từ bàn phím. Các ký tự nguyên âm bao gồm: 'o', 'u', 'i', 'a', 'e' hoặc 'O', 'U', 'I', 'A', 'E'
+        let chart = prompt("nhập 1 kí tự trong bảng chữ cái");
+        switch (chart.toLowerCase()) {
+            case ("o"):
+            case ("u"):
+            case ("i"):
+            case ("a"):
+            case ("e"):
+                alert("nguyên âm");
+            break;
+            default:
+                alert("phụ âm");
+        }
+
+    </script>
+</body>
+</html>
