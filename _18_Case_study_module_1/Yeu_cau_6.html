@@ -75,7 +75,7 @@
 
     }
 
-    let num = new LotteCodeGym();
+    let ticket = new LotteCodeGym();
     let check = true;
     let array = [];
     let max = 0;
@@ -114,23 +114,23 @@
                 document.getElementById("input0"+i).disabled = true;
             }
 
-            num.setNum1(Math.floor(Math.random() * 100));
-            num.setNum2(Math.floor(Math.random() * 100));
-            num.setNum3(Math.floor(Math.random() * 100));
-            num.setNum4(Math.floor(Math.random() * 100));
-            num.setNum5(Math.floor(Math.random() * 100));
-            num.setNum6(Math.floor(Math.random() * 100));
-            let a = document.getElementById("input00").value = num.getNum1();
-            let b = document.getElementById("input01").value = num.getNum2();
-            let c = document.getElementById("input02").value = num.getNum3();
-            let d = document.getElementById("input03").value = num.getNum4();
-            let e = document.getElementById("input04").value = num.getNum5();
-            let f = document.getElementById("input05").value = num.getNum6();
+            ticket.setNum1(Math.floor(Math.random() * 100));
+            ticket.setNum2(Math.floor(Math.random() * 100));
+            ticket.setNum3(Math.floor(Math.random() * 100));
+            ticket.setNum4(Math.floor(Math.random() * 100));
+            ticket.setNum5(Math.floor(Math.random() * 100));
+            ticket.setNum6(Math.floor(Math.random() * 100));
+            let a = document.getElementById("input00").value = ticket.getNum1();
+            let b = document.getElementById("input01").value = ticket.getNum2();
+            let c = document.getElementById("input02").value = ticket.getNum3();
+            let d = document.getElementById("input03").value = ticket.getNum4();
+            let e = document.getElementById("input04").value = ticket.getNum5();
+            let f = document.getElementById("input05").value = ticket.getNum6();
             array.unshift(a, b, c, d, e, f);
             console.log(array);
             max++;
         }
-        else {
+        else if (max>=4) {
             alert("Bạn chỉ được mua tối đa 4 vé");
         }
     }
