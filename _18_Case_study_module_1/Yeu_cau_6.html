@@ -102,6 +102,7 @@
             check = true;
             for (let i = 0; i<6;i++){
                 document.getElementById("input0"+i).disabled = false;
+                document.getElementById("input0"+i).value = "";
             }
             max++ ;
         }
@@ -125,7 +126,7 @@
             let d = document.getElementById("input03").value = num.getNum4();
             let e = document.getElementById("input04").value = num.getNum5();
             let f = document.getElementById("input05").value = num.getNum6();
-            array.push(a, b, c, d, e, f)
+            array.unshift(a, b, c, d, e, f);
             console.log(array);
             max++;
         }
